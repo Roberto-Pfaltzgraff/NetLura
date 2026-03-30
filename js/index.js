@@ -1,6 +1,15 @@
-// Exibe um alerta de boas-vindas ao usuário
-alert("Bem-vindo a Netflix!");
-// Registra uma mensagem no console do navegador para depuração
+// Verifica se é a primeira visita ao site
+const isFirstVisit = !localStorage.getItem('firstVisit');
+
+// Se for a primeira visita, exibe o alerta de boas-vindas
+if (isFirstVisit) {
+    // Exibe um alerta de boas-vindas ao usuário
+    alert("Bem-vindo a Netflix!");
+    // Marca que já visitou
+    localStorage.setItem('firstVisit', 'true');
+}
+
+// Registra uma mensagem no console do navegador para depuração (sempre)
 console.log("Aproveite a experiência de assistir seus filmes e séries favoritos!");
 
 // Seleciona todos os elementos com a classe 'profile' (os perfis na página)
